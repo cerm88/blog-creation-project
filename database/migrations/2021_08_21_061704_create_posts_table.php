@@ -15,6 +15,20 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            // campo de relación (llave foranea de usuario)
+            $table->bigInteger('user_id')->unsigned();
+
+            // Campos de la tabla post
+            $table->string('title');
+            $table->string('slug')->unique(); // Campo único para los slugs
+            $table->text('body');
+            $table->string('image')->nullable();
+            $table->text('iframe')->nullable();
+
+            // conexión en la relación entre tablas
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
