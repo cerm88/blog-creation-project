@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Ruta raiz, nos mostrará todos los posts
+Route::get('/','PageController@posts');
+
+// Ruta para ir al blog y el post seleccionado
+Route::get('/blog{post}','PageController@post')->name('post');
 
 Auth::routes();
 

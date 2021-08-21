@@ -23,4 +23,10 @@ class Post extends Model
             ]
         ];
     }
+
+    // Retornamos la función adecuada para la relación
+    public function user()
+    {
+        return $this->belongsTo(User::class); // Un post pertenece a un usuario
+    }
 }
