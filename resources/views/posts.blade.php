@@ -21,6 +21,8 @@
                     </div>
                 </div>
             @endforeach
+            {{-- Imprimir datos de paginación --}}
+            {{ $posts->links() }}
         </div>
     </div>
 </div>
