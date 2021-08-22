@@ -4,6 +4,7 @@ namespace App;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
@@ -38,5 +39,14 @@ class Post extends Model
     public function getGetExcerptAttribute()
     {
         return substr($this->body, 0, 140);
+    }
+
+    // Método para importar la imagen en la vista
+    public function getGetImageAttribute()
+    {
+        if ($this->image) {
+            // Debemos hacer pública la carpeta storage/ con accedo directo a public mediante `php artisan storage:link`
+            return url("storage/$this->image");
+        }
     }
 }
