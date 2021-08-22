@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Http\Requests\PostRequest;
 
+// Importamos clase para trabajar en la actualización y eliminación de un archivo
+use Illuminate\Support\Facades\Storage;
+
 class PostController extends Controller
 {
     /**
@@ -71,9 +74,23 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        // Helper de colección de datos para saber que pasa al ejecutar este método
+        // dd($request->all());
+
+        // Actualizando registro
+        $post->update($request->all());
+
+        if ($request->file('file')) {
+            // Eliminar imagen
+            Storage::disk('public')->delete($post->image);
+
+            $post->image = $request->file('file')->store('posts', 'public');
+            $post->save();
+        }
+
+        return back()->with('status', 'Actualizado con éxito');
     }
 
     /**
@@ -84,6 +101,13 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        // Eliminamos la imagen
+        Storage::disk('public')->delete($post->image);
+
+        // Eliminamos el post
+        $post->delete();
+
+        // Retornamos la vista anterior con un mensaje en el estatus
+        return back()->with('status', 'Eliminado con éxito');
     }
 }

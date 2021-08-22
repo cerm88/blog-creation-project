@@ -26,11 +26,11 @@
                         </div>
                         <div class="form-group">
                             <label>Contenido *</label>
-                            <textarea name="body" rows="6" class="form-control" required value="{{ old('body', $post->body) }}"></textarea>
+                            <textarea name="body" rows="6" class="form-control" required>{{ old('body', $post->body) }}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Contenido embebido</label>
-                            <textarea name="iframe" rows="6" class="form-control" required value="{{ old('iframe', $post->iframe) }}"></textarea>
+                            <textarea name="iframe" class="form-control">{{ old('iframe', $post->iframe) }}</textarea>
                         </div>
                         <div class="form-group">
                             @csrf
