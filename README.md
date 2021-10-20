@@ -1,78 +1,121 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# **Proyecto Creación de Blogs**
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Se basa en mostrar una interfaz gráfica de un sistema de generación blogs interactivos donde el usuario pueda agregar, editar y eliminar los blogs pertenecientes a la aplicación.
 
-## About Laravel
+## **Estado actual**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Proyecto de prueba
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## **Requisitos para el entorno de desarrollo**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### **Requisitos de versionamiento git en los branch**
 
-## Learning Laravel
+En los branch se utilizará la convensión de acuerdo a dos categorias de ramas: ramas regulares y temporales.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Ramas Regulares:** Estas ramas estarán disponibles en su repositorio de forma permanente. Su convención de nomenclatura es simple y directa.
+- **Development  (*dev*)** es la principal rama de desarrollo. La idea de la rama de desarrollo es realizar cambios en ella y evitar que los desarrolladores realicen cambios en la rama main directamente. Los cambios en la rama de desarrollo se someten a revisiones y después de la prueba, se fusionan con la rama main.
+- **Master (*main*)** es la rama predeterminada disponible en el repositorio de Git. Debe ser estable todo el tiempo y no permitirá ningún registro directo. Solo puede fusionarlo después de la revisión del código. Todos los miembros del equipo son responsables de mantener al maestro estable y actualizado.
+- **QA/Test (*QA/test*)** contiene todo el código para las pruebas de QA y las pruebas de automatización de todos los cambios implementados. Antes de que cualquier cambio vaya al entorno de producción, debe someterse a las pruebas de control de calidad para obtener una base de código estable.
+- **Staging (*staging*)** contiene características probadas que las partes interesadas querían que estuvieran disponibles para una demostración o una propuesta antes de pasar a la producción. Aquí se toman las decisiones si una característica debe finalmente incorporarse al código de producción.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Ramas Temporales:** estas son las ramas que se pueden crear y eliminar cuando sea necesario. Pueden ser los siguientes:
+- **Feature (*feature*)** cualquier cambio de código para un nuevo módulo o caso de uso debe realizarse en una rama de funciones. Esta rama se crea en función de la rama de desarrollo actual.
+- **Bug Fix (*bugfix*)** si los cambios de código realizados desde la rama de funciones fueron rechazados después de un lanzamiento, sprint o demostración, cualquier corrección necesaria después de eso debe hacerse en la rama de corrección de errores.
+- **Hot Fix (*hotfix*)** Si es necesario reparar un bloqueador, hacer un parche temporal, aplicar un marco crítico o un cambio de configuración que debe manejarse de inmediato, debe crearse como una revisión. No sigue la integración programada del código y podría fusionarse directamente con la rama de producción y luego en la rama de desarrollo.
+- **Experimental (*experimental*)** Cualquier nueva característica o idea que no sea parte de un lanzamiento o un sprint. Una rama para jugar.
+- **Build (*build*)** Una rama específicamente para crear artefactos de compilación específicos o para ejecutar ejecuciones de cobertura de código.
+- **Release (*release*)** Una rama para etiquetar una versión de lanzamiento específica.
+- **Merging (*merge*)** Una rama temporal para resolver conflictos de fusión, generalmente entre el último desarrollo y una función o rama Hotfix. Esto también se puede utilizar si dos ramas de una función en la que están trabajando varios desarrolladores deben fusionarse, verificarse y finalizarse.
 
-## Laravel Sponsors
+El nombre del branch debe estar estructurado de la siguiente forma:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+<token>/<short-descriptive-name>
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+Ejemplos de nombre de brach:
 
-## Contributing
+```
+feature/JIRA-1234_support-dark-theme
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+bugfix/more-gray-shades
+```
 
-## Code of Conduct
+```
+hotfix/disable-endpoint-zero-day-exploit
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+experimental/dark-theme-support
+```
 
-## Security Vulnerabilities
+```
+release/myapp-1.01.123
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Se recomienda encarecidamente utilizar el flujo de trabajo de [gitflow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow) utilizado por la institución Atlassian.
 
-## License
+### **Requisitos de versionamiento git en los commit**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+El mensaje del commit debe estar estructurado de la siguiente forma:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+El commit contiene los siguientes elementos estructurales en el type:
+- **build:** cambios que afectan el sistema de compilación o las dependencias externas (ámbitos de ejemplo: gulp, brócoli, npm)
+- **ci:** cambios en nuestros archivos de configuración y scripts de CI (ámbitos de ejemplo: Travis, Circle, BrowserStack, SauceLabs)
+- **chore:** actualización de tareas rutinarias, etc. sin cambio de código de producción (ejemplo: modificar el .gitignore, métodos internos privados)
+- **docs:** cambios solamente en la documentación
+- **feat:** introduce nuevas características en la base del código
+- **fix:** corrige un error en la base del código
+- **perf:** un cambio de código que mejora el rendimiento
+- **refactor:** un cambio de código que no corrige un error ni agrega una característica, sólamente refactorizar código
+- **style:** cambios que no afectan el significado del código (espacios en blanco, formato, punto y coma que faltan, etc.)
+- **test:** agregar pruebas faltantes o corregir pruebas existentes
+
+ Se puede agregar un ámbito al tipo de commit para proveer información contextual adicional y se escribe entre paréntesis, ejemplos, `feat(parser): add ability to parse arrays`, `feat(authentication): add autentication users in dashboard`.
+
+Ejemplos de commit:
+
+```
+feat: allow provided config object to extend other configs
+```
+
+```
+docs: correct spelling of CHANGELOG
+```
+
+```
+feat(lang): added polish language
+```
+
+```
+fix(player): fix player initialization
+```
+
+```
+refactor(auth): improve refresh token logic
+```
+
+Referencias:  
+[Git Branching Naming Convention: Best Practices](https://codingsight.com/git-branching-naming-convention-best-practices/)  
+[Git Branch Naming Convention](https://dev.to/couchcamote/git-branching-name-convention-cch)  
+[Flujo de trabajo de Gitflow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow)  
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)  
+[The Angular Convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)
+
+## **Actualizaciones Pendientes**
+
+- ...
+
+## **Versiones**
+
+- ...
