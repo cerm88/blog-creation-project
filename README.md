@@ -4,7 +4,7 @@ Se basa en mostrar una interfaz gráfica de un sistema de generación blogs inte
 
 ## **Estado actual**
 
-Proyecto de prueba
+Proyecto de prueba.
 
 ## **Requisitos para el entorno de desarrollo**
 
@@ -112,10 +112,23 @@ Referencias:
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)  
 [The Angular Convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)
 
-## **Actualizaciones Pendientes**
+## **Instalación y funcionamiento**
 
-- ...
+Es necesario tener instalado PHP y MySQL a la mínima versión para que pueda ejecutarse bajo el framwork Laravel 6.x, su funcionamiento puede ser desde un entorno local o un servidor web. 
+
+## **Tecnologías Utilizadas**
+- PHP 7.x
+- MySQL 5.x
+- Laravel 6.x
+
+## **Bugs y errores conocidos**
+
+Sin bugs y errores conocidos
+
+## **Actualizaciones pendientes**
+
+Sin actualizaciones pendientes
 
 ## **Versiones**
 
-- ...
+- V1.0.0: Proyecto inicial con caracteríscas básicas
